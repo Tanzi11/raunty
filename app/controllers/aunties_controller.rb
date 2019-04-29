@@ -1,0 +1,2 @@
+class AuntiesController < ApplicationController
+end
