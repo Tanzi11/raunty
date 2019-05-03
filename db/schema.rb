@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_215427) do
+ActiveRecord::Schema.define(version: 2019_05_03_190939) do
+
+  create_table "advices", force: :cascade do |t|
+    t.integer "aunty_id"
+    t.integer "rant_id"
+    t.string "feedback"
+    t.boolean "helpful"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["aunty_id"], name: "index_advices_on_aunty_id"
+    t.index ["rant_id"], name: "index_advices_on_rant_id"
+  end
+
+  create_table "aunties", force: :cascade do |t|
+    t.string "personality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rants", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_rants_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

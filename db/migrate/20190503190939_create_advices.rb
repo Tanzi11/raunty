@@ -5,7 +5,6 @@ class CreateAdvices < ActiveRecord::Migration[5.2]
       t.references :rant, foreign_key: true
       t.string :feedback
       t.boolean :helpful
-
       t.timestamps
     end
   end
