@@ -1,0 +1,2 @@
+class Aunty < ApplicationRecord
+end

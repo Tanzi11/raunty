@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aunty: one
+  rant: one
+  feedback: MyString
+  helpful: false
+
+two:
+  aunty: two
+  rant: two
+  feedback: MyString
+  helpful: false
