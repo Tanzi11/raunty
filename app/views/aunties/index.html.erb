@@ -1,1 +1,8 @@
-<h1>Choose Your Aunty</h1>
+<h1>Welcome to Raunty!</h1>
+<h2>Feeling blue? Friends avoiding you? Want to vent without judgment? Need some advice?</h2>
+<h2>Choose the aunty you're feeling!</h2>
+<ul>
+    <% @aunties.each do |aunty| %>
+        <h3> Aunty <%= link_to aunty.personality.capitalize, aunty_path(aunty) %><h3>
+    <% end %>
+</ul>
