@@ -3,6 +3,6 @@
 <h2>Choose the aunty you're feeling!</h2>
 <ul>
     <% @aunties.each do |aunty| %>
-        <h3> Aunty <%= link_to aunty.personality.capitalize, aunty_path(aunty) %><h3>
+        <h3> Aunty <%= link_to aunty.personality.capitalize, new_aunty_rant_path(aunty) %><h3>
     <% end %>
 </ul>
