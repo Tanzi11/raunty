@@ -1,0 +1,9 @@
+<% if @rant.errors %>
+<h2> <%= @rant.errors.full_messages.join %> </h2>
+<% end %>
+
+<%= form_for [@aunty, @rant] do |f| %>
+<%= f.label "rant to me" %>
+<%= f.text_area :content %>
+<%= f.submit %>
+<% end %>
