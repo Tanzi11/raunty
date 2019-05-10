@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :aunties do
     resources :rants, only: [:new, :create]
   end
-  resources :advice
+  resources :advices, only: [:show, :update]
 end
