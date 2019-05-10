@@ -1,0 +1,9 @@
+<h1> <%= @advice.aunty.personality %> says: </h1>
+<p> <%= @advice.feedback %> </p>
+<p> Because you said: <%= @advice.rant.content %> </p>
+
+<%= form_for @advice do |f| %>
+<%= f.label "Check box if this was helpful." %>
+<%= f.check_box :helpful %>
+<%= f.submit "Submit Feedback" %>
+<% end %>
