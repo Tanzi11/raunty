@@ -5,4 +5,8 @@ class Advice < ApplicationRecord
   def self.all_helpful_advice
     where(helpful: true)
   end
+
+  # def helpful_advice(rants)
+  #   rants.collect {|rant| rant.advices.all...}
+  # end
 end
