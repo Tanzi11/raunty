@@ -2,12 +2,17 @@ class AdvicesController < ApplicationController
   def show
     @advice = Advice.find(params[:id])
   end
+
+  def edit
+    @advice = Advice.find(params[:id])
+  end
+
   def update
     @advice= Advice.find(params[:id])
     if @advice.update(advice_params)
-      redirect_to rants_path
+      redirect_to edit_advice_path
     else
-      render :edit
+      render :show
     end
   end
 
