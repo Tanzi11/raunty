@@ -6,7 +6,5 @@ class Advice < ApplicationRecord
     where(helpful: true)
   end
 
-  # def helpful_advice(rants)
-  #   rants.collect {|rant| rant.advices.all...}
-  # end
+
 end

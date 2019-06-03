@@ -10,7 +10,8 @@ class AdvicesController < ApplicationController
   def update
     @advice= Advice.find(params[:id])
     if @advice.update(advice_params)
-      redirect_to edit_advice_path
+    flash[:notice] = AuntiesHelper.helpful_message(@advice)
+      redirect_to advice_path(@advice)
     else
       render :show
     end

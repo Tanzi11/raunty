@@ -5,7 +5,7 @@ class RantsController < ApplicationController
 
   def new
     @aunty = Aunty.find(params[:aunty_id])
-    @rant = Rant.new
+    @rant = @aunty.rants.build
   end
 
   def create
