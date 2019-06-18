@@ -10,6 +10,7 @@ gem 'omniauth-google-oauth2', '~> 0.4.1'
 gem 'activerecord-session_store', '~> 1.0'
 gem 'bootstrap'
 gem 'active_model_serializers'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
