@@ -8,4 +8,8 @@ class Rant < ApplicationRecord
   def helpful_advice
     self.advice.all_helpful_advice
   end
+
+  def partial_content
+    self.content.truncate(27)
+  end
 end

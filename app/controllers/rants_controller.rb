@@ -1,7 +1,13 @@
 class RantsController < ApplicationController
   def index
+    if params[:aunty_id]
+      aunty = Aunty.find(params[:aunty_id])
+      rants = aunty.rants
+      render json: rants
+    else
     @rants = Rant.all
   end
+end
 
   def new
     @aunty = Aunty.find(params[:aunty_id])
@@ -25,6 +31,7 @@ end
   def show
     @aunty = Aunty.find(params[:aunty_id])
     @rant = Rant.find(params[:id])
+    render json
   end
 
 

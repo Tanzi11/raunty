@@ -16,7 +16,7 @@ class User < ApplicationRecord
   end
 
 def your_helpful_advice
-  self.rants.each do {|rant| puts rant.collect}
+  self.rants.each {|rant| puts rant.collect}
 end
 
 end

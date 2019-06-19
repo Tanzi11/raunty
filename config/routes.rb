@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "aunties#index"
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth' }
   resources :aunties do
-    resources :rants, only: [:new, :create]
+    resources :rants, only: [:new, :index, :create]
   end
   resources :advices, only: [:show, :edit, :update]
   resources :rants, except: [:new, :create]
