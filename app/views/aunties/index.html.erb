@@ -2,7 +2,11 @@
 <h2>Feeling blue? Friends avoiding you? Want to vent without judgment? Need some advice?</h2>
 <h2>Choose the aunty you're feeling!</h2>
 <ul>
-    <% @aunties.each do |aunty| %>
-        <h3> Aunty <%= link_to aunty.personality.capitalize, new_aunty_rant_path(aunty) %><h3>
+    <% @aunties.each do |obj| %>
+        <p> <%= obj.personality %> aunty
+        <%= link_to "add a rant", new_aunty_rant_path(obj) %> OR <a data-aunt-id= "<%= obj.id %>" id="view_link" href="#">view rants</a> </p>
+<div id= "space-<%= obj.id %>">
+
+</div>
     <% end %>
 </ul>
