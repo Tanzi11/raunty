@@ -4,9 +4,16 @@
 <ul>
     <% @aunties.each do |obj| %>
         <p> <%= obj.personality %> aunty
-        <%= link_to "add a rant", new_aunty_rant_path(obj) %> OR <a data-aunt-id= "<%= obj.id %>" id="view_link" href="#">view rants</a> </p>
+        <%= link_to "add a rant", "#",{id: "create_link", data: {aunt_id: obj.id} }  %> OR <a data-aunt-id= "<%= obj.id %>" id="view_link" href="#">view rants</a> </p>
 <div id= "space-<%= obj.id %>">
 
 </div>
     <% end %>
 </ul>
+<div id="hidden" style="display: none">
+<%= form_for @rant do |f| %>
+<%= f.label "rant to me" %>
+<%= f.text_area :content %>
+<%= f.submit %>
+<% end %>
+</div>

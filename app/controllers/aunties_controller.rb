@@ -3,6 +3,7 @@ class AuntiesController < ApplicationController
 
   def index
     @aunties = Aunty.all
+    @rant = Rant.new
   end
 
   def show

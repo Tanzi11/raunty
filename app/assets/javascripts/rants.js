@@ -1,13 +1,13 @@
 $(document).ready(function() {
   console.log("rant.js")
   $("a#view_link").click(myScript);
+  $("a#create_link").click(displayForm);
 });
 
 function myScript(event) {
   event.preventDefault()
   const auntID = parseInt(event.target.dataset.auntId); //change into integer
   $.get(`/aunties/${auntID}.json`,function(response){
-    debugger
     let list = `<p> ${response.personality} is popular. She has heard ${response.rants.length} rants! </p>`
     list += "<ol>"
     response.rants.forEach(function(obj){
@@ -17,6 +17,14 @@ function myScript(event) {
     $(`div#space-${auntID}`).empty();
     $(`div#space-${auntID}`).html(list);//handle response that comes from api
   })
+};
+
+function displayForm(event) {
+  event.preventDefault()
+  const auntID = parseInt(event.target.dataset.auntId);
+  const form = $('div#hidden').html();
+  $(`div#space-${auntID}`).empty();
+  $(`div#space-${auntID}`).html(form);
 };
 
 
